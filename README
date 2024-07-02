@@ -1,0 +1,68 @@
+
+# Event_booking_System
+
+# Run project Command :- 
+-- npm run dev
+   node index.js
+
+##############################################  FILE AND FOLDER STRCTURE  ###########################################################################################################################################################################################################
+
+ 
+├── index.js                     # Main application entry point , Main file
+├── controllers/                  # Code for handling API endpoint logic
+│   ├── authController.js         # User registration and login logic with the help of jwt toekn
+│   └── eventsController.js       # Event CRUD and booking logic here 
+├── middlewares/                  # Middleware folder
+│   ├── middleware.js             # JWT middleware and organizer role check here
+├── models/ 
+    ├── users.js                  # Scehma / Model for users 
+    ├── events_m.js               # Scehma / Model for create events 
+    ├── eventDetails_m.js         # Scehma / Model for create events Deatils 
+    ├── bookedEvents_m.js         # Scehma / Model for Bokked Events 
+├── routes/                       
+│   └── userRoutes.js             # Main routing file
+├── package.json                  # Project packages
+├──                       
+└── README.md                     # This file (project documentation)
+
+
+
+############################################################################  ROUTS MANAGEMENT  ###########################################################################################################################################################################################################
+
+
+
+    | Api for   |  Routes |            url                                 |     PURPOSE             |        Description                                          
+    |---------- |----------|-----------------------------------------------|-------------------------|------------------------------------------------------------------------------------|
+    |   USER    |   POST   | localhost:3000/api/register                   | FOR REGSITER USER       |  API FOR REGSITER THE USER  [ WITH JWT TOKEN , ID AND ROLE I M SAVE IN TOKEN ]     |
+    |---------- |----------|-----------------------------------------------|-------------------------|------------------------------------------------------------------------------------|
+    |   USER    |   POST   | localhost:3000/api/login                      | FOR LOGIN USER          |  API FOR LOGIN THE USER   [ AFTRE LOGIN  , ID AND ROLE I M SAVE IN TOKEN ]         |                                                         |
+    |---------- |----------|-----------------------------------------------|-------------------------|------------------------------------------------------------------------------------|
+    |  USER     |  GET     | localhost:3000/api/events                     |  GET ALL EVENTS         |   GET ALL EVENTS FROM EVENTS Scehma AND MODEL                                      |                        
+    |---------- |----------|-----------------------------------------------|-------------------------|------------------------------------------------------------------------------------|
+    |  USER     |  POST    | localhost:1000/api/eventsdetails/:eventid     | GET EVENT DETAILS       |                                                                                    |
+    |---------- |----------|-----------------------------------------------|-------------------------|------------------------------------------------------------------------------------|
+    |  USER     |  GET     | localhost:1000/api/eventbooking/:eventid      | EVENT BOOKED            |  USER SAVE OUR BOKKING                                                             |                                              |
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                            #  ORGANIZER ROUTES  #
+
+    |..........................................................................................................................................................................|
+    | ORGANIZER |  POST    | localhost:1000/api/addevents                  | ADD EVENTS              |  ORGANIZER ADD THE EVENTS                                               |
+    |---------- |----------|-----------------------------------------------|-------------------------|-------------------------------------------------------------------------|
+    | ORGANIZER |  POST    | localhost:1000/api/addeventsdetails/:eventid  | ADD EVENT DETAILS       |  ORGANIZER ADD THE EVENTSDETAILS BASE ON EVENT ID                       |                                                                                  |
+    |---------- |----------|-----------------------------------------------|-------------------------|-------------------------------------------------------------------------|
+    | ORGANIZER |  PUT     | localhost:3000/api/editevents/:id             | UPDATE EVENT            |  ORGANIZER UPDATE EVENTS                                                |
+    |---------- |----------|-----------------------------------------------|-------------------------|-------------------------------------------------------------------------|
+    | ORGANIZER |  DELETE  | localhost:3000/api/eventdelete/:id            | DELETE EVENT            |   ORGANIZER DELETE EVENTS WITH THE HELP OF EVENT ID                     |                                                                                     |
+    |---------- |----------|-----------------------------------------------|-------------------------|-------------------------------------------------------------------------|
+    | ORGANIZER |  GET     | localhost:3000/api/eventsattendance/:eventId  | GET ATTENDANCE          | ORGANIZER GET ATTENDANCE BASE ON EVENTID  , IF THEY LOGIN               |
+    |---------- |----------|-----------------------------------------------|-------------------------|-------------------------------------------------------------------------|
+   
+
+
+
+
+
+
+
+
